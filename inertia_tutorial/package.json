@@ -24,6 +24,7 @@
         "@inertiajs/inertia": "^0.1.9",
         "@inertiajs/inertia-vue": "^0.1.4",
         "bootstrap-vue": "^2.13.1",
+        "epic-spinners": "^1.1.0",
         "vue": "^2.6.11"
     }
 }

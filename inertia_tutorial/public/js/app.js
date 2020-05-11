@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"48c50d6185c4ff72b19a","1":"6f267d600ad25443bbca","2":"586010cf1a5f5270dca9"}[chunkId] + ""
+/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"ba91f1d3ecb42cf5fa31","1":"b924a210866eaecff8c4","2":"2360a8cc04e5099d392e","3":"7c811365b4aa3970401a","4":"5bd7ebb56e42e3bc4c7b","5":"bb1a2fe3c61e76801123","6":"0919d4852c95139187e1"}[chunkId] + ""
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -55648,13 +55648,39 @@ var map = {
 		"./resources/js/Pages/Contact.vue",
 		1
 	],
+	"./Users/Create": [
+		"./resources/js/Pages/Users/Create.vue",
+		2
+	],
+	"./Users/Create.vue": [
+		"./resources/js/Pages/Users/Create.vue",
+		2
+	],
+	"./Users/Edit": [
+		"./resources/js/Pages/Users/Edit.vue",
+		6,
+		5
+	],
+	"./Users/Edit.vue": [
+		"./resources/js/Pages/Users/Edit.vue",
+		6,
+		5
+	],
+	"./Users/Index": [
+		"./resources/js/Pages/Users/Index.vue",
+		3
+	],
+	"./Users/Index.vue": [
+		"./resources/js/Pages/Users/Index.vue",
+		3
+	],
 	"./Welcome": [
 		"./resources/js/Pages/Welcome.vue",
-		2
+		4
 	],
 	"./Welcome.vue": [
 		"./resources/js/Pages/Welcome.vue",
-		2
+		4
 	]
 };
 function webpackAsyncContext(req) {
@@ -55667,7 +55693,7 @@ function webpackAsyncContext(req) {
 	}
 
 	var ids = map[req], id = ids[0];
-	return __webpack_require__.e(ids[1]).then(function() {
+	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(function() {
 		return __webpack_require__(id);
 	});
 }

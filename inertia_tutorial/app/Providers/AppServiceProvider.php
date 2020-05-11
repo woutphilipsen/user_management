@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Inertia\Inertia;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Schema\Builder;
 
@@ -14,7 +15,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        Inertia::share('app.name', config('app.name'));
+        
+        Inertia::share('errors', function() {
+            return session()->get('errors') ? session()->get('errors')->getBag('default')->getMessages() : (object) []; 
+        });
+        
+        Inertia::share('successMessage', function() {
+            return session()->get('successMessage') ? session()->get('successMessage') : null; 
+        });
     }
 
     /**
